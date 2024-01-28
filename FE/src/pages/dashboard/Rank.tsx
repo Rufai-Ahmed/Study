@@ -27,7 +27,11 @@ export const Rank = () => {
                     Here goes the top scholar/scholars of the moment:
                     <span className="text-white font-bold">
                       {" "}
-                      {el?.users.map((el: any) => el?.userName)}
+                      <div>
+                        {el?.users.map((el: any) => (
+                          <div>{el?.userName}</div>
+                        ))}
+                      </div>
                     </span>
                   </>
                 ) : i === 1 ? (

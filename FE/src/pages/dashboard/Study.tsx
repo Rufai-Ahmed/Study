@@ -32,13 +32,15 @@ export const Study = () => {
     }
   }, [id]);
 
-  const minutes = parseInt(data?.totalStudyTime.split(" ")[0], 10);
+  const onlyStudy = dur * 60;
 
-  const targetDate = moment().add(minutes, "minutes");
+  const targetDate = moment().add(
+    onlyStudy + (onlyStudy / int) * breakDur,
+    "minutes"
+  );
 
   console.log(targetDate, "t");
 
-  const [date, setDate]: any = useState(targetDate);
   console.log(targetDate, "d");
 
   return (
@@ -120,11 +122,11 @@ export const Study = () => {
                       breakInterval: int,
                     },
                     JSON.parse(localStorage.getItem("ID")!)
-                  ).then((res) => {
+                  ).then(async (res) => {
                     console.log(res);
                     localStorage.setItem(
                       `time ${res?._id}`,
-                      JSON.stringify(date)
+                      JSON.stringify(targetDate)
                     );
                     setClicked(true);
                     nav(`/dashboard/study/${res?._id}`);
