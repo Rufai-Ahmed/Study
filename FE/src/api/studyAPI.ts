@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:4000";
+const URL = "https://study-be-main.onrender.com";
 
 export const createStudy = async (data: {}, ID: string) => {
   try {
