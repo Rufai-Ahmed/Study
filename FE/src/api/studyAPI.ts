@@ -5,24 +5,18 @@ const URL = "http://localhost:4000";
 export const createStudy = async (data: {}, ID: string) => {
   try {
     return axios.post(`${URL}/create-study/${ID}`, data).then((res) => {
-      console.log(res);
-
       return res.data?.data;
     });
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
 export const getStudy = async (ID: string) => {
   try {
     return axios.get(`${URL}/get-study/${ID}`).then((res) => {
-      console.log(res);
-
       return res.data?.data;
     });
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -33,7 +27,6 @@ export const getStudyHistory = async (ID: string) => {
       return res.data?.data;
     });
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -43,7 +36,6 @@ export const getTopScholars = async () => {
       return res.data?.data;
     });
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -51,12 +43,9 @@ export const getTopScholars = async () => {
 export const setElapsed = async (ID: string) => {
   try {
     return axios.patch(`${URL}/update-elapsed/${ID}`).then((res) => {
-      console.log(res);
-
       return res.data?.data;
     });
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -66,12 +55,9 @@ export const addLesson = async (data: {}, studyID: string) => {
     return axios
       .post(`${URL}/add-student-learnt/${studyID}`, data)
       .then((res) => {
-        console.log(res);
-
         return res.data?.data;
       });
   } catch (error) {
-    console.log(error);
     return error;
   }
 };

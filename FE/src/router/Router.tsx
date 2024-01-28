@@ -9,6 +9,7 @@ import { Study } from "../pages/dashboard/Study";
 import { PrivateRouter } from "./PrivateRouter";
 import { History } from "../pages/dashboard/History";
 import { Rank } from "../pages/dashboard/Rank";
+import { Lesson } from "../pages/dashboard/Lesson";
 
 export const Router = createBrowserRouter([
   {
@@ -58,8 +59,8 @@ export const Router = createBrowserRouter([
         element: <Rank />,
       },
       {
-        path: "lesson",
-        element: <Rank />,
+        path: "lesson/:id",
+        element: <Lesson />,
       },
     ],
   },
